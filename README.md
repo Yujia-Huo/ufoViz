@@ -1,4 +1,4 @@
-# UFOs in the USA: Mapping Decades of sightings with Location, Trends, Shapes, and Witness Testimonies
+# 🛸UFOs in the USA: Mapping Decades of sightings with Location, Trends, Shapes, and Witness Testimonies
 
 Created by: Yujia Huo
 
@@ -8,7 +8,7 @@ Language Used: Javascript, Python, D3.js
 
 View the Project Directly: [https://yujia-huo.github.io/ufoViz/](https://yujia-huo.github.io/ufoViz/)
 
-Read More:
+Read More: （link to write up)
 
 ![cover](./cover.png)
 
