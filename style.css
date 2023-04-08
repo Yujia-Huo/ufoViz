@@ -1,0 +1,215 @@
+html, body {
+    margin: 0px;
+    font-family: Montserrat;
+    /* font-size: 15px; */
+    color: whitesmoke;
+    background-color: black;
+}
+
+h1{
+    font-size: 40pt;
+    font-weight: 400;
+    margin-bottom: 100px;
+
+}
+
+h2{
+    font-size: 20pt;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 12pt;
+    margin-top: 50px;
+    font-weight: 500;
+}
+
+p{
+    font-size: 12pt;
+    line-height: 2;
+    font-weight: 100;
+}
+
+#sliderMention{
+    margin-top: 100px;
+}
+a:link {
+    color: rgb(165, 241, 250);
+}
+
+/* visited link */
+a:visited {
+color: rgb(165, 241, 250);
+}
+
+/* mouse over link */
+a:hover {
+color: rgba(165, 241, 250, 0.726);
+}
+
+.arrow{
+    text-decoration: none;
+}
+
+#title{
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 100px;
+    /* border-bottom: 2pt; */
+    margin-bottom: 100px;
+    
+    background-color: rgb(10, 10, 10);
+}
+
+
+#viz1-map_container{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 150px;
+}
+
+#viz2_container{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 150px;
+}
+
+#viz3_container{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 150px;
+}
+
+
+.axis text,
+.slider text {
+    font-family: Montserrat;
+    font-size: 16px;
+    fill: whitesmoke;
+}
+
+#chart--container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+#dataviz_mySlider{
+    /* height: 100vh; */
+    margin-bottom:100px;
+    /* width: 700px; */
+    order: 2;
+}
+
+figure#map{
+    margin: 0px;
+    /* height: 70vh; */
+    width: 100%;
+}
+
+figure#linechart{
+    margin: 0px;
+    /* height: 70vh; */
+    width: 60%;
+}
+
+#shape{
+    margin-top: 50px;
+
+}
+#gov{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+}
+#insight{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 100px;
+}
+
+#icons{
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+
+}
+.icon{
+    margin-right: 100px;
+}
+
+#quote{
+    text-align: center;
+    margin-top: 400px;
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-bottom: 300px;
+}
+#credit{
+    background-color: rgb(15, 15, 15);
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#creditRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+#plugin{
+    margin-left: 50pt;
+}
+
+.tooltip{
+    font-weight: 200;
+    font-size: 15pt;
+    position:absolute;
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 1024px) {
+    h1{
+        font-size: 28pt;
+    }
+    p{
+        font-size: 12pt;
+    }
+    h2{
+        font-size: 16pt;
+    }
+    
+    h3{
+        font-size: 12pt;
+    }
+
+    #title{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+        border-bottom: 2pt;
+    }
+    
+    
+    #viz1-map_container{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+    }
+    
+    #viz2_container{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 50px;
+    }
+    
+    #viz3_container{
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-bottom: 100px;
+    }
+
+}
