@@ -8,7 +8,7 @@ View the Project Directly: [https://yujia-huo.github.io/ufoViz/](https://yujia-h
 
 Read More:
 
-![Screen Shot 2023-04-08 at 3.41.55 PM.png](UFOs%20in%20the%20USA%20Mapping%20Decades%20of%20sightings%20with%20%20cf9f833ad5f741dab11e88d98cce36ae/Screen_Shot_2023-04-08_at_3.41.55_PM.png)
+![cover](./cover.png)
 
 Unidentified Flying Objects (UFOs) have been a topic of fascination and controversy for decades. With the advancements in technology, more and more sightings are being reported and documented across the United States. The following visualization will be based on dataset from National UFO Reporting Center to explore the UFO sighting to presenting different perspectives.
 
