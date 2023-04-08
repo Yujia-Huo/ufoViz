@@ -81,7 +81,11 @@ color: rgba(165, 241, 250, 0.726);
     margin-bottom: 150px;
 }
 
-
+img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+}
 .axis text,
 .slider text {
     font-family: Montserrat;
