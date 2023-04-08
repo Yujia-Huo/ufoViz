@@ -287,22 +287,28 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                     //   .attr("stroke", "black")
 
         svg2.on('mouseover', function(){
+
+
+            shapeLine
+            .transition()
+            .duration(1000)
+            .attr("x1", function(d) { return xScale(d.total); })
+
             popCircle
             // .interrupt()
             .transition()
             .duration(1000)
             .attr("cx", function(d) { return xScale(d.total); })
-            .end();
+            // .attr("r", "6");
+
+            svg2.on('mouseover', null);
+
             // .attr("cy", function(d) { return yScale(d.shape); })
             // .attr("r", "1")
             // .on('end', function(){})
-            shapeLine
-            .transition()
-            .duration(1000)
-            .attr("x1", function(d) { return xScale(d.total); })
-            .end();
 
         })
+
         popCircle.on("mouseover", function (e, d) {
             tooltip.style("visibility", "visible")
                 .style("left",(e.pageX+50)+"px")
@@ -317,7 +323,8 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .attr("r", "10");
                 // .style("fill", 'black');
 
-        }).on("mouseout", function () {
+        })
+        .on("mouseout", function () {
 
             tooltip.style("visibility", "hidden");
 
