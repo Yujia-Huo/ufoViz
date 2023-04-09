@@ -288,6 +288,8 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .style("fill", "rgba(165, 241, 250, 0.992)")
                     //   .attr("stroke", "black")
 
+
+        //scroll in animation
         svg2.on('mouseover', function(){
 
 
@@ -310,6 +312,12 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
             // .on('end', function(){})
 
         })
+
+        //tooltip
+
+        const tooltip = plot2
+        .append("div")
+        .attr("class", "tooltip");
 
         popCircle.on("mouseover", function (e, d) {
             var formatTotal = d3.format(',')(d.total);
@@ -343,42 +351,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
 
 
         //tooltips
-        const tooltip = plot2
-                .append("div")
-                .attr("class", "tooltip");
 
-
-        const tooltip2 = plot3
-        .append("div")
-        .attr("class", "tooltip2");
-
-        // popCircle.on("mouseover", function (e, d) {
-        //     tooltip.style("visibility", "visible")
-        //         .style("left",(e.pageX+50)+"px")
-        //         .style("top",(e.pageY)+"px")
-        //         .html(`Shape: &nbsp${d.shape} <br> Count: &nbsp${d.total}`);
-
-        //     console.log(d3.select(this));
-        //     d3.select(this)
-        //         .attr("r", "6")
-        //         // .interrupt()
-        //         .transition()
-        //         .duration(200)
-        //         .attr("r", "10");
-        //         // .style("fill", 'black');
-
-        // }).on("mouseout", function () {
-
-        //     tooltip.style("visibility", "hidden");
-
-        //     d3.select(this)
-        //     // .interrupt()
-        //     .transition()
-        //     .duration(200)
-        //     // .delay(100)
-        //     .attr("r", "6");
-
-        // })
 
 
 /***************************** */
@@ -409,6 +382,11 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
         layout.start();
 
 
+
+        const tooltip2 = plot3
+        .append("div")
+        .attr("class", "tooltip2");
+        
         // This function takes the output of 'layout' above and draw the words
         // Better not to touch it. To change parameters, play with the 'layout' variable above
         function draw(words) {
@@ -418,7 +396,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .range([0.2, 1]);
                 svg3
                 .append("g")
-                .attr("transform", "translate(" + layout.size()[0]/3 + "," + layout.size()[1] / 2 + ")")
+                .attr("transform", "translate(" + layout.size()[0]/3.5 + "," + layout.size()[1] / 2 + ")")
                 .selectAll("text")
                     .data(words)
                     .enter().append("text")
