@@ -11,6 +11,8 @@ function parseCountries(d) {
     //time format
     var dateFormat = d3.timeFormat("%Y");
 
+
+    var shape = d.shape === "" ? "(blank)" : d.shape;
     //filter none US data
     if(d.state.length<3 && 
         d.state !="NL"&& 
@@ -31,7 +33,7 @@ function parseCountries(d) {
         state: d.state,
         lon: d.city_longitude,
         lat: d.city_latitude,
-        shape: d.shape,
+        shape: shape,
         date: dateFormat(new Date(d.date_time_new))
     }
 }
@@ -179,7 +181,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
         //x axis
         svg_1.append("g")
         .attr("transform", `translate(100, 500)`)
-        .call(d3.axisBottom(x));
+        .call(d3.axisBottom(x).tickFormat(d3.format('d')));
 
         // y scale
         const y = d3.scaleLinear()
@@ -254,7 +256,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
 
         svg2.append("g")
             .attr("transform", `translate(50, 0)`)
-            .call(d3.axisLeft(yScale))
+            .call(d3.axisLeft(yScale));
 
         svg2.append("g")
             .attr("transform", "translate(0," + height*2/3 + ")")
@@ -310,10 +312,11 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
         })
 
         popCircle.on("mouseover", function (e, d) {
+            var formatTotal = d3.format(',')(d.total);
             tooltip.style("visibility", "visible")
                 .style("left",(e.pageX+50)+"px")
                 .style("top",(e.pageY)+"px")
-                .html(`Shape: &nbsp${d.shape} <br> Count: &nbsp${d.total}`);
+                .html(`Shape: &nbsp${d.shape} <br> Count: &nbsp${formatTotal}`);
 
             // console.log(d3.select(this));
             d3.select(this)
@@ -344,6 +347,10 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .append("div")
                 .attr("class", "tooltip");
 
+
+        const tooltip2 = plot3
+        .append("div")
+        .attr("class", "tooltip2");
 
         // popCircle.on("mouseover", function (e, d) {
         //     tooltip.style("visibility", "visible")
@@ -392,7 +399,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
         // Constructs a new cloud layout instance. It run an algorithm to find the position of words that suits your requirements
         var layout = d3.layout.cloud()
         .size([width, height/2])
-        .words(top100WordCount.map(function(d) { return {text: d.word, size: d.count}; }))
+        .words(top100WordCount.map(function(d) { return {text: d.word, size: d.count, count:d.count}; }))
         .rotate(0)
         .padding(5)
         .fontSize(function(d) { return sizeScale(d.size)})
@@ -405,6 +412,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
         // This function takes the output of 'layout' above and draw the words
         // Better not to touch it. To change parameters, play with the 'layout' variable above
         function draw(words) {
+                console.log(words);
                 var opacityScale = d3.scaleLinear()
                 .domain(d3.extent(words, function(d){return d.size ; }))
                 .range([0.2, 1]);
@@ -424,19 +432,29 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                     })
                     .text(function(d) { return d.text; })
                     .on('mouseover', function(e, d){
+
+                        tooltip2.style("visibility", "visible")
+                        .style("left",(e.pageX+50)+"px")
+                        .style("top",(e.pageY)+"px")
+                        .html(`Word Frequency: &nbsp${d3.format(',')(d.count)}`);
+
                         d3.select(this)
                         .transition()
                         .duration(200)
                         .attr('fill', 'rgba(165, 241, 250, 1)')
+                        .style("font-size", function(d) { return d.size + 3 + "px"; })
                         .style('opacity',1)
 
                     })
                     .on('mouseout', function(e, d){
+                        tooltip2.style("visibility", "hidden");
+
                         d3.select(this)
                         .transition()
                         .duration(200)
                         .attr('fill', 'white')
                         .style('opacity',function(d){ return opacityScale(d.size); })
+                        .style("font-size", function(d) { return d.size + "px"; })
 
                     })
             }

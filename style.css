@@ -175,6 +175,15 @@ figure#linechart{
     visibility: hidden;
 }
 
+.tooltip2{
+    background-color: rgba(36, 36, 36, 0.553);
+    font-weight: 200;
+    font-size: 15pt;
+    position:absolute;
+    visibility: hidden;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 1024px) {
     h1{
         font-size: 28pt;
