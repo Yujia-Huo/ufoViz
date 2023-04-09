@@ -396,7 +396,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .range([0.2, 1]);
                 svg3
                 .append("g")
-                .attr("transform", "translate(" + layout.size()[0]/3.5 + "," + layout.size()[1] / 2 + ")")
+                .attr("transform", "translate(" + layout.size()[0]/4 + "," + layout.size()[1] / 2 + ")")
                 .selectAll("text")
                     .data(words)
                     .enter().append("text")
