@@ -324,7 +324,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
             tooltip.style("visibility", "visible")
                 .style("left",(e.pageX+50)+"px")
                 .style("top",(e.pageY)+"px")
-                .html(`Shape: &nbsp${d.shape} <br> Count: &nbsp${formatTotal}`);
+                .html(`Form: &nbsp${d.shape} <br> Count: &nbsp${formatTotal}`);
 
             // console.log(d3.select(this));
             d3.select(this)
@@ -396,7 +396,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                 .range([0.2, 1]);
                 svg3
                 .append("g")
-                .attr("transform", "translate(" + layout.size()[0]/4 + "," + layout.size()[1] / 2 + ")")
+                .attr("transform", "translate(" + layout.size()[0]/3.5 + "," + layout.size()[1] / 2 + ")")
                 .selectAll("text")
                     .data(words)
                     .enter().append("text")

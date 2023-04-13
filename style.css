@@ -178,7 +178,7 @@ figure#linechart{
 .tooltip{
     font-weight: 200;
     font-size: 12pt;
-    line-height: 2;
+    line-height: 1.5;
     position:absolute;
     visibility: hidden;
 }
@@ -189,8 +189,8 @@ figure#linechart{
     font-size: 12pt;
     position:absolute;
     visibility: hidden;
-    padding: 10px;
-    line-height: 2;
+    padding: 5px;
+    line-height: 1.5;
 }
 
 @media only screen and (max-width: 1024px) {
