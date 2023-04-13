@@ -412,7 +412,7 @@ Promise.all([usaMapPromise, obsPromise, wordCountPromise]).then(function([usamap
                     .on('mouseover', function(e, d){
 
                         tooltip2.style("visibility", "visible")
-                        .style("left",(e.pageX+50)+"px")
+                        .style("left","70%")
                         .style("top",(e.pageY)+"px")
                         .html(`Word Frequency: &nbsp${d3.format(',')(d.count)}`);
 
