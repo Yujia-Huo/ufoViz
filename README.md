@@ -8,7 +8,7 @@ Language Used: Javascript, Python, D3.js
 
 View the Project Directly: [https://yujia-huo.github.io/ufoViz/](https://yujia-huo.github.io/ufoViz/)
 
-Read More: （link to write up)
+Read More: https://drive.google.com/file/d/1tRFuEnXO0bccHItf2cWgtxXfqTOCSO22/view?usp=sharing
 
 ![cover](./cover.png)
 
